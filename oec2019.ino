@@ -6,7 +6,6 @@ const int echoPin = 10;
 
 //////////INCLUDES//////////
 
-#include <TimedAction.h>
 #include <Servo.h>
 
 //////////CONSTANTS/////////
@@ -15,7 +14,7 @@ const int echoPin = 10;
 const int TURN_TIME = 200;
 
 //speed of sound in cm/us
-const long SPEED_OF_SOUND = 0.034;
+const float SPEED_OF_SOUND = 0.034;
 
 //motors
 const int LEFT_FORWARD = 0;
@@ -205,9 +204,6 @@ void setup()
  
 void loop()
 {
-//  ultrasonicThread1.check();
-//  ultrasonicThread2.check();
-
   //if the second hole has been found, stop moving
   if(secondHoleFound)
   {
@@ -310,7 +306,7 @@ void loop()
             dumpSand();
             secondHoleFound = true;
           }
-          rightTurn = false;
+          rightTurn = true;
         }
       }
     }
